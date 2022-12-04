@@ -15,6 +15,7 @@ public class BillboardManagerTest {
     String movie8 = "movie8";
     String movie9 = "movie9";
     String movie10 = "movie10";
+    String movie11 = "movie11";
 
     @Test
     public void AddMovies() {
@@ -90,7 +91,7 @@ public class BillboardManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-       @Test
+    @Test
     public void MoviesOverLimit5() {
         BillboardManager manager = new BillboardManager(5);
         manager.add(movie1);
@@ -150,6 +151,38 @@ public class BillboardManagerTest {
                 movie10,
         };
         String[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void AddMovieOverLimit() {
+        BillboardManager manager = new BillboardManager(10);
+        manager.add(movie1);
+        manager.add(movie2);
+        manager.add(movie3);
+        manager.add(movie4);
+        manager.add(movie5);
+        manager.add(movie6);
+        manager.add(movie7);
+        manager.add(movie8);
+        manager.add(movie9);
+        manager.add(movie10);
+        manager.add(movie11);
+
+        String[] expected = {
+                movie1,
+                movie2,
+                movie3,
+                movie4,
+                movie5,
+                movie6,
+                movie7,
+                movie8,
+                movie9,
+                movie10,
+        };
+        String[] actual = manager.addOverLimit();
 
         Assertions.assertArrayEquals(expected, actual);
     }
