@@ -171,18 +171,18 @@ public class BillboardManagerTest {
         manager.add(movie11);
 
         String[] expected = {
-                movie1,
-                movie2,
-                movie3,
-                movie4,
-                movie5,
-                movie6,
-                movie7,
-                movie8,
-                movie9,
+                movie11,
                 movie10,
+                movie9,
+                movie8,
+                movie7,
+                movie6,
+                movie5,
+                movie4,
+                movie3,
+                movie2,
         };
-        String[] actual = manager.addOverLimit();
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }

@@ -33,14 +33,6 @@ public class BillboardManager {
         }
         return result;
     }
-
-    public String[] addOverLimit() {
-        String[] overLimit = new String[limit];
-        for (int i = 0; i < overLimit.length; i++) {
-            overLimit[i] = movies[i];
-        }
-        return overLimit;
-    }
 }
 
 
