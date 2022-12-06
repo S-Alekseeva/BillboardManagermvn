@@ -27,6 +27,12 @@ public class BillboardManager {
     }
 
     public String[] findLast() {
+        int movieslenght = movies.length;
+        if (movieslenght >= limit) {
+            movieslenght = limit;
+        } else {
+            limit = movies.length;
+        }
         String[] result = new String[limit];
         for (int i = 0; i < result.length; i++) {
             result[i] = movies[movies.length - 1 - i];
@@ -34,5 +40,3 @@ public class BillboardManager {
         return result;
     }
 }
-
-
